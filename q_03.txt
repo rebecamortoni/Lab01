@@ -1,0 +1,7 @@
+Questão 03
+
+Mesmo após a chamada das funções funcX, funcY e funcZ os valores de arg1 e arg2 não se alteram.
+Os retornos das funções funcX e funcY não são recebidos e arg1 e arg2 também não são alterados no percursso das mesmas. 
+A função funcZ também não altera os valores de arg1 e arg2, (somente o da variável 'resultado') e esta função não retorna nada.
+
+Ou seja, o valor de arg1 e arg2 permanecem sempre os mesmos.
