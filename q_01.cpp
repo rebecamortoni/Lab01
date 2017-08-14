@@ -122,6 +122,37 @@ void esfera() {
 	system("pause");
 }
 	
-	
+void triangulo(){
+    	float lado;
+    	float area;
+    	std::cout << "Informe o lado do triangulo equilatero: " << std::endl;
+    	std::cin >> lado >> std::endl;
+    	std::cout << "O perimetro do triangulo eh: " << 3*lado << std::endl;
+    	area = pow(lado, 2);
+    	std::cout << "A area do triangulo eh:" << (area*sqrt(3))/4 << std::endl;
+    	system("pause");
+}
+
+void quadrado(){
+    	float lado;
+    	std::cout << "Informe o lado do quadrado: " << std::endl;
+    	std::cin >> lado >> std::endl;
+    	std::cout << "O perimetro do quadrado eh: "<< 4*lado << std::endl;
+    	std::cout << "A area do quadrado eh: "<< pow(lado, 2) << std::endl;
+    	system("pause");
+}
+
+void piramide(){
+    	float aresta, altura, arestat; //aresta = aresta do quadrado, altura = altura da piramide, arestat = aresta do triangulo;
+    	float faceq, facet;
+    	std::cout << "Informe a aresta da base quadrangular: "<< std::endl;
+    	std::cin >> aresta >> std::endl;
+    	std::cout << "Informe a altura da piramide: " << std::endl;
+    	std::cin >> altura >> std::endl;
+
+    	faceq = pow(aresta, 2);
+    	arestat= sqrt((pow(altura, 2)+ 2*pow(aresta,2)));
+
+}	
 	
 	
