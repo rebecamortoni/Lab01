@@ -1,17 +1,15 @@
 #include <iostream>
 #include <cmath>
 #define PI = 3,1415;
-//enum tipo {
-//	Triangulo Equilatero = 1,
-//	Retangulo,
-///	Quadrado,
-//	Circulo,
-//	Piramide com base quadrangular,
-//	Cubo,
-//	Paralelepipedo,
-//	Esfera,
-//	Sair = 0
-//}
+
+void triangulo();
+void retangulo();
+void quadradao();
+void circulo();
+void piramide();
+void cubo();
+void paralelepipedo();
+void esfera();
 
 int main() {
 	
@@ -78,6 +76,8 @@ int main() {
 	} while (tipo < 0 && tipo < 9)
 }
 	
+void triangulo()	
+	
 void retangulo() {
 	float base, altura;
 	std::cout << "Informe a medida da base do retangulo: " << std::endl;
@@ -89,7 +89,7 @@ void retangulo() {
 	float perimetro = (base + altura)*2;
 	std::cout << "O perimeto do retangulo eh: " << perimetro << std::endl;
 	system("pause");
-}
+}	
 
 void circulo() {
 	float raio;
