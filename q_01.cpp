@@ -1,20 +1,22 @@
 #include <iostream>
 #include <cmath>
-#define PI = 3,1415;
+#include <stdlib.h>
+#define PI 3.1415
 
 void triangulo();
 void retangulo();
-void quadradao();
+void quadrado();
 void circulo();
 void piramide();
 void cubo();
-void paralelepipedo();
+void para();
 void esfera();
 
 int main() {
 	
 	int tipo;
 	do {
+		std::cout << "------------------------------------" << std::endl;
 		std::cout << "Calculadora Geométrica" << std::endl;
 		std::cout << "1 -> Triangulo Equilatero" << std::endl;
 		std::cout << "2 -> Retangulo" << std::endl;
@@ -27,53 +29,60 @@ int main() {
 		std::cout << "0 -> Sair" << std::endl;
 		std::cout << "Digite sua opção: " << std::endl;
 		std::cin >> tipo;
+		if (tipo < 0 || tipo > 8) {
+			std::cout << "Digite um numero entre 0 e 8!" << std::endl;
+		}
 		
 		switch (tipo) {
 			case 1:
-				system("cls");
+				system("clear");
 				triangulo();
-				system("cls");
 				break;
 			case 2:
-				system("cls");
+				system("clear");
 				retangulo();
-				system("cls");
 				break;
 			case 3:
-				system("cls");
+				system("clear");
 				quadrado();
-				system("cls");
 				break;
 			case 4:
-				system("cls");
+				system("clear");
 				circulo();
-				system("cls");
 				break;
 			case 5:
-				system("cls");
+				system("clear");
 				piramide();
-				system("cls");
 				break;
 			case 6:
-				system("cls");
+				system("clear");
 				cubo();
-				system("cls");
 				break;
 			case 7:
-				system("cls");
-				paralelepipedo();
-				system("cls");
+				system("clear");
+				para();
 				break;
 			case 8:
-				system("cls");
+				system("clear");
 				esfera();
-				system("cls");
 				break;
 			case 0:
 				std::cout << "Valeu!" << std::endl;
 				return 0;
-				
-	} while (tipo < 0 && tipo < 9)
+			}	
+	}while (tipo > 0 && tipo < 9);
+
+	return 0;
+}
+
+void triangulo(){
+    float lado;
+    float area;
+    std::cout << "Informe o lado do triangulo equilatero: " << std::endl;
+    std::cin >> lado;
+    std::cout << "O perimetro do triangulo eh: " << 3*lado << std::endl;
+    area = pow(lado, 2);
+    std::cout << "A area do triangulo eh:" << (area*sqrt(3))/4 << std::endl;
 }
 	
 void retangulo() {
@@ -86,18 +95,43 @@ void retangulo() {
 	std::cout << "A area do retângulo eh: " << area << std::endl;
 	float perimetro = (base + altura)*2;
 	std::cout << "O perimeto do retangulo eh: " << perimetro << std::endl;
-	system("pause");
 }	
+
+void quadrado(){
+    float lado;
+    std::cout << "Informe o lado do quadrado: " << std::endl;
+    std::cin >> lado;
+    std::cout << "O perimetro do quadrado eh: "<< 4*lado << std::endl;
+    std::cout << "A area do quadrado eh: "<< pow(lado, 2) << std::endl;
+}
 
 void circulo() {
 	float raio;
 	std::cout << "Informe a medida do raio do circulo: " << std::endl;
 	std::cin >> raio;
-	float area = PI*(pow(raio,2));
+	float area = PI *(raio * raio);
 	std::cout << "A area do circulo eh:" << area << std::endl;
 	float perimetro = 2*PI*raio;
 	std::cout << "O perimetro do circulo eh: " << perimetro << std::endl;
-	system("pause");
+}	
+
+void piramide(){
+    float aresta, altura, arestat; //aresta = aresta do quadrado, altura = altura da piramide, arestat = aresta do triangulo;
+    float faceq, facet;
+    std::cout << "Informe a aresta da base quadrangular: "<< std::endl;
+    std::cin >> aresta;
+    std::cout << "Informe a altura da piramide: " << std::endl;
+    std::cin >> altura;
+
+    faceq = pow(aresta, 2);
+    arestat = sqrt((pow(altura, 2)+ 2*pow(aresta,2)));
+    facet = (arestat*sqrt(3))/4;
+    float area = facet + faceq;
+    float volume = (faceq*altura)/3; 
+    std::cout << "A area das faces da piramide eh: " << area << std::endl;
+    std::cout << "O volume da piramide eh: " << volume << std::endl;
+}
+
 	
 void cubo() {
 	float aresta;
@@ -107,8 +141,8 @@ void cubo() {
 	std::cout << "A area do cubo eh: " << area << std::endl;
 	float volume = pow(aresta, 3);
 	std::cout << "O volume do cubo eh: " << volume << std::endl;
-	system("pause");
 }
+
 void para(){
     int a1, a2, a3;
     std::cout << "Informe o valor da aresta que indica altura: " << std::endl;
@@ -117,10 +151,10 @@ void para(){
     std::cin >> a2;
     std::cout << "Informe o valor da aresta que indica profundidade: " << std::endl;
     std::cin >> a3;
-
-    std::cout << "O valor da area do paralelepipedo eh: "<<(2*(a1*a2))+(2*(a1*a3)) + (2*(a2*a3)) << std::endl;
-    std::cout << "O Valor do volume do paralelepipedo eh: " << a1*a2*a3 << std::endl;
-    system("pause");
+    float area = (2*(a1*a2))+(2*(a1*a3)) + (2*(a2*a3));
+    std::cout << "O valor da area do paralelepipedo eh: " << area << std::endl;
+    float volume = a1*a2*a3;
+    std::cout << "O Valor do volume do paralelepipedo eh: " << volume << std::endl;
 }
 
 	
@@ -132,45 +166,9 @@ void esfera() {
 	std::cout << "A area da esfera eh: " << area << std::endl;
 	float volume = 4/3 * (PI*(pow(raio, 3)));
 	std::cout << "O volume da esfera eh: " << volume << std::endl;
-	system("pause");
 }
 	
-void triangulo(){
-    	float lado;
-    	float area;
-    	std::cout << "Informe o lado do triangulo equilatero: " << std::endl;
-    	std::cin >> lado;
-    	std::cout << "O perimetro do triangulo eh: " << 3*lado << std::endl;
-    	area = pow(lado, 2);
-    	std::cout << "A area do triangulo eh:" << (area*sqrt(3))/4 << std::endl;
-    	system("pause");
-}
 
-void quadrado(){
-    	float lado;
-    	std::cout << "Informe o lado do quadrado: " << std::endl;
-    	std::cin >> lado;
-    	std::cout << "O perimetro do quadrado eh: "<< 4*lado << std::endl;
-    	std::cout << "A area do quadrado eh: "<< pow(lado, 2) << std::endl;
-    	system("pause");
-}
-
-void piramide(){
-    float aresta, altura, arestat; //aresta = aresta do quadrado, altura = altura da piramide, arestat = aresta do triangulo;
-    float faceq, facet;
-    std::cout << "Informe a aresta da base quadrangular: "<< std::endl;
-    std::cin >> aresta;
-    std::cout << "Informe a altura da piramide: "<< std::endl;
-    std::cin >> altura;
-
-    faceq = pow(aresta, 2);
-    arestat = sqrt((pow(altura, 2)+ 2*pow(aresta,2)));
-    facet = (arestat*sqrt(3))/4;
-
-    std::cout << "A area das faces da piramide eh: " << facet + faceq << std::endl;
-    std::cout << "O volume da piramide eh: " << (faceq*altura)/3 << std::endl;
-    system("pause");
-}
 
 
 	
