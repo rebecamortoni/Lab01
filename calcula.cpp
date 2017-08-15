@@ -1,5 +1,4 @@
-#ifndef "CALCULA.H"
-#define "CALCULA.H"
+#include CALCULA.H
 
 float ask_lado() {
     float lado;
