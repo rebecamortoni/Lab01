@@ -1,5 +1,4 @@
-#ifndef "PERIMETRO.H"
-#define "PERIMETRO.H"
+#include "PERIMETRO.H"
 
 void perim_tri(float lado) {
     float perimetro = 3*lado;
