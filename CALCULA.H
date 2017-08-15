@@ -1,4 +1,5 @@
-#include <iostream>
+#ifndef CALCULA.H
+#define CALCULA.H
 
 float ask_lado();
 float ask_base();
@@ -10,3 +11,5 @@ float ask_a2();
 float ask_a3();
 float ask_ares_pira();
 float ask_aresta();
+
+#endif
