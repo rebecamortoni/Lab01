@@ -1,5 +1,4 @@
-#ifndef "AREA.H"
-#define "AREA.H"
+#include "AREA.H"
 
 
 void area_tri(float lado) {
@@ -9,7 +8,7 @@ void area_tri(float lado) {
 
 void area_retan(float base, float altura) {
     float area = base*altura;
-	std::cout << "A area do retângulo eh: " << area << std::endl;
+	std::cout << "A area do retÃ¢ngulo eh: " << area << std::endl;
 }
 
 void area_quad(float lado) {
