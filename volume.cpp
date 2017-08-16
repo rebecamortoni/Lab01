@@ -1,5 +1,4 @@
-#ifndef "VOLUME.H"
-#define "VOLUME.H"
+#include "VOLUME.H"
 
 void vol_pira(float aresta, float altura) {
     float faceq = pow(aresta, 2);
