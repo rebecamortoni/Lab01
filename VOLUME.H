@@ -1,9 +1,9 @@
-#ifndef "VOLUME.H"
-#define "VOLUME.H"
-
 #include <iostream>
 #include <cmath>
 
+#ifndef "VOLUME.H"
+#define "VOLUME.H"
+#ifndef
 #DEFINE PI 3.1415
 
 void vol_pira(float aresta, float altura);
