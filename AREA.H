@@ -14,3 +14,4 @@ void area_cubo(float aresta);
 void area_para(float a1, float a2, float a3);
 void area_esfera(float raio);
 #endif
+#endif
