@@ -1,6 +1,5 @@
 #include "AREA.H"
 
-
 void area_tri(float lado) {
     float area = ((pow(lado, 2))*sqrt(3))/4;
     std::cout << "A area do triangulo eh:" << area << std::endl;
@@ -17,7 +16,7 @@ void area_quad(float lado) {
 }
 
 void area_circ(float raio) {
-    float area = PI *(raio * raio);
+    float area = 3.1415 *(raio * raio);
 	std::cout << "A area do circulo eh:" << area << std::endl;
 }
 
@@ -41,6 +40,6 @@ void area_para(float a1, float a2, float a3) {
 }
 
 void area_esfera(float raio) {
-    float area = 4*PI*raio;
+    float area = 4*3.1415*raio;
 	std::cout << "A area da esfera eh: " << area << std::endl;
 }

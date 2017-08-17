@@ -17,6 +17,6 @@ void vol_para(float a1, float a2, float a3) {
 }
 
 void vol_esfera(float raio) {
-    float volume = 4/3 * (PI*(pow(raio, 3)));
+    float volume = 4/3 * (3.1415*(pow(raio, 3)));
 	std::cout << "O volume da esfera eh: " << volume << std::endl;
 }

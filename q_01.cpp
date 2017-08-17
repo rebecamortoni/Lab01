@@ -1,11 +1,15 @@
 #include <iostream>
+#include "AREA.H"
+#include "PERIMETRO.H"
+#include "VOLUME.H"
 
-    int main() {
+
+	int main() {
 
         int tipo;
         do {
             std::cout << "------------------------------------" << std::endl;
-            std::cout << "Calculadora Geométrica" << std::endl;
+            std::cout << "Calculadora Geometrica" << std::endl;
             std::cout << "1 -> Triangulo Equilatero" << std::endl;
             std::cout << "2 -> Retangulo" << std::endl;
             std::cout << "3 -> Quadrado" << std::endl;
@@ -15,7 +19,7 @@
             std::cout << "7 -> Paralelepipedo" << std::endl;
             std::cout << "8 -> Esfera" << std::endl;
             std::cout << "0 -> Sair" << std::endl;
-            std::cout << "Digite sua opção: " << std::endl;
+            std::cout << "Digite sua opcao: " << std::endl;
             std::cin >> tipo;
             if (tipo < 0 || tipo > 8) {
 			std::cout << "Opcao invalida!" << std::endl;

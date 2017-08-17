@@ -1,7 +1,7 @@
-#include <iostream>
+#ifndef CALCULA_H
+#define CALCULA_H
 
-#ifndef CALCULA.H
-#define CALCULA.H
+#include <iostream>
 
 float ask_lado();
 float ask_base();

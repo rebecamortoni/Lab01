@@ -16,7 +16,7 @@ void perim_qua(float lado) {
 }
 
 void perim_circ(float raio) {
-    float perimetro = 2*PI*raio;
+    float perimetro = 2*3.1415*raio;
 	std::cout << "O perimetro do circulo eh: " << perimetro << std::endl;
 }
 
