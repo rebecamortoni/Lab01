@@ -1,3 +1,5 @@
+#include <iostream>
+
 #ifndef CALCULA.H
 #define CALCULA.H
 
