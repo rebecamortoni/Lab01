@@ -1,7 +1,7 @@
 comp = g++
 flags = -Wall -std=c++11 -pedantic -I./include/
 
-all: init bin/questao1 bin/questao3
+all: init bin/questao1 bin/questao2 bin/questao3
 
 init:	build/ bin/
 
@@ -29,6 +29,26 @@ build/perimetro.o: src/perimetro.cpp include/perimetro.h
 build/q_01.o: src/q_01.cpp
 	$(comp) -c $(flags) -o $@ $<
 
+
+
+
+
+bin/questao2: build/fatorial.o build/primalidade.o build/q_02.o
+	$(comp) $(flags) -o $@ build/fatorial.o build/primalidade.o build/q_02.o
+
+build/fatorial.o: src/fatorial.cpp include/fatorial.h
+	$(comp) -c $(flags) -o $@ $<	
+
+build/primalidade.o: src/primalidade.cpp include/primalidade.h
+	$(comp) -c $(flags) -o $@ $<
+
+build/q_02.o: src/q_02.cpp
+	$(comp) -c $(flags) -o $@ $<
+
+
+
+
+	
 bin/questao3: build/q_03.o
 	$(comp) $(flags) -o $@ $<
 
